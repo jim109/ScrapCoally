@@ -9,7 +9,6 @@ import {
     Legend,
   } from 'chart.js';
   import { Bar } from 'react-chartjs-2';
-  import faker from 'faker';
   
   ChartJS.register(
     CategoryScale,
@@ -42,7 +41,7 @@ import {
     datasets: [
       {
         //label: 'Dataset 1',
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
+        data: labels.map(() => Math.floor(Math.random() * (100 - 0 + 1)) + 0),
         //backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
       // {
