@@ -12,9 +12,20 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 // Define las opciones para el gráfico
 const options = {
-    responsive: false,
-    maintainAspectRatio: false, // Esto permite ajustar el tamaño sin mantener la proporción original
-    aspectRatio: 1, // Ajusta el aspect ratio según tus necesidades
+    responsive: true,
+    maintainAspectRatio: true, // Esto permite ajustar el tamaño sin mantener la proporción original
+    aspectRatio: 1,// Ajusta el aspect ratio según tus necesidades
+    plugins: {
+      legend: {
+        position: 'left',
+        align: 'start', // Agregué esta línea para alinear al principio (puedes ajustarla según tus necesidades)
+        labels: {
+          boxWidth: 10,
+          fontSize: 10,
+        },
+      },
+    },
+
   };
 
  const data = {
@@ -22,10 +33,10 @@ const options = {
     labels: label,
   datasets: [
     {
-      label: '# of Votes',
-      data: [50, 50],
+      label: '100 of Votes',
+      data: [40, 60],
       backgroundColor: [
-        'rgba(255, 159, 64, 0.2)',
+        'rgba(249, 115, 22, 1)',
         'rgba(120, 113, 108, 0.2)',
         'rgba(54, 162, 235, 0.2)',
         'rgba(255, 206, 86, 0.2)',
@@ -33,7 +44,7 @@ const options = {
         'rgba(153, 102, 255, 0.2)',
       ],
       borderColor: [
-        'rgba(255, 159, 64, 1)',
+        'rgba(249, 115, 22, 1)',
         'rgba(120, 113, 108, 0.2)',
         'rgba(54, 162, 235, 1)',
         'rgba(255, 206, 86, 1)',

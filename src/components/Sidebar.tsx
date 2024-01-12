@@ -27,7 +27,7 @@ export const Sidebar = () => {
         <div>
         <div className="-mx-6 px-6 pt-20 pb-4">
             <Link href="/dashboard" title="home">
-              <Image src="/Logo-Coally-Blanco.png" width={175} height={128} alt="Coally logo"/>
+              <Image src="/Logo-Coally-Blanco.png" width={175} height={56} alt="Coally logo"/>
             </Link>
         </div>
         <ul className="space-y-2  mt-8"> 

@@ -1,14 +1,15 @@
-
 import { LabelItem } from '@/components';
-
-import { BsHouse, BsFillPersonFill } from 'react-icons/bs'
+import { BsFillPersonFill } from 'react-icons/bs'
 import { FaCalendar, FaShoppingBag } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
-import {BarChart} from '../../components/BarChart'
 import { PieChart } from '../../components/PieChart';
 
-const label = ['Vacantes', 'Perfiles de profesionales']
+export const metadata = {
+  title: 'Dashboard Holberton - Coally',
+  description: 'Dashboard',
+ };
 
+const label = ['Vacantes', 'Profesionales']
 
 export default function Home() {
   return (
@@ -27,8 +28,11 @@ export default function Home() {
         <LabelItem icon={<IoMail />} data={'93'} title={'Empresas'} />
       </div>
 
-      <div className='flex justify-between pt-8'>
-        <div className='shadow-lg p-2 rounded-md'>
+      <div className='flex justify-between pt-12'>
+        <div className='shadow-lg p-6 rounded-md'>
+          <PieChart label={label} />
+        </div>
+        <div className='shadow-lg p-6 rounded-md'>
           <PieChart label={label} />
         </div>
 
