@@ -3,7 +3,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
 interface Props {
-  label: string
+  label: string[]
 }
 
 export function PieChart({label}:Props) {
