@@ -2,7 +2,11 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
-export function PieChart({label}) {
+interface Props {
+  label: string
+}
+
+export function PieChart({label}:Props) {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
