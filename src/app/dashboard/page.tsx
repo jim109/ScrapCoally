@@ -28,14 +28,13 @@ export default function Home() {
         <LabelItem icon={<IoMail />} data={'93'} title={'Empresas'} />
       </div>
 
-      <div className='flex justify-between pt-12'>
-        <div className='shadow-lg p-6 rounded-md'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10   pt-16 '>
+        <div className='shadow-lg rounded-md'>
           <PieChart label={label} />
         </div>
-        <div className='shadow-lg p-6 rounded-md'>
+        <div className='shadow-lg rounded-md'>
           <PieChart label={label} />
         </div>
-
       </div>
 
     </div>

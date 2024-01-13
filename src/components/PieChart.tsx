@@ -17,6 +17,7 @@ const options = {
     aspectRatio: 1,// Ajusta el aspect ratio según tus necesidades
     plugins: {
       legend: {
+        display:true,
         position: 'left' as const,
         align: 'start' as const, // Agregué esta línea para alinear al principio (puedes ajustarla según tus necesidades)
         labels: {
@@ -57,5 +58,5 @@ const options = {
 };
 
 
-  return <Pie data={data} options={options} />;
+  return <Pie data={data} options={options}  className='p-6'/>;
 }

@@ -1,6 +1,14 @@
+import { PieChart } from '@/components/PieChart';
 import { BarChart } from '../../../components/BarChart';
 import { DropdownButton } from '../../../components/DropdownButton';
 import { SalarioRolChart } from '../../../components/SalarioRolChart'
+
+export const metadata = {
+ title: 'Profesional Holberton - Coally',
+ description: 'Profesional Holberton - Coally',
+};
+
+const label = ['Vacantes', 'Profesionales']
 
 export default function ChartsPage() {
   return (
@@ -47,7 +55,7 @@ export default function ChartsPage() {
                 </div>
             </div>
           <div className='shadow-lg rounded-lg'>
-            <BarChart />
+            <PieChart label={label} />
           </div>
         </div>
       </div>

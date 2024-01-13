@@ -21,14 +21,17 @@ import {
   
   export const options = {
     responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 1,
     plugins: {
       legend: {
         display: false,
         position: 'left' as const,
       },
       title: {
-        display: false,
-        text: 'Chart.js Bar Chart',
+        display: true,
+        text: 'Texto Titulo',
+        position: 'bottom' as const,
       },
     },
     
