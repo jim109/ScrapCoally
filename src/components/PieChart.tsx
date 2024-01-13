@@ -18,7 +18,7 @@ const options = {
     plugins: {
       legend: {
         position: 'left' as const,
-        align: 'start', // Agregué esta línea para alinear al principio (puedes ajustarla según tus necesidades)
+        align: 'start' as const, // Agregué esta línea para alinear al principio (puedes ajustarla según tus necesidades)
         labels: {
           boxWidth: 10,
           fontSize: 10,
