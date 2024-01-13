@@ -17,7 +17,7 @@ const options = {
     aspectRatio: 1,// Ajusta el aspect ratio según tus necesidades
     plugins: {
       legend: {
-        position: 'left',
+        position: 'left' as const,
         align: 'start', // Agregué esta línea para alinear al principio (puedes ajustarla según tus necesidades)
         labels: {
           boxWidth: 10,
