@@ -1,4 +1,13 @@
 'use client'
+
+interface DataItem {
+  [key: string]: string | number;
+}
+
+interface Props {
+  dataChart?: DataItem[];
+}
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -29,7 +38,7 @@ import {
         position: 'left' as const,
       },
       title: {
-        display: true,
+        display: false,
         text: 'Texto Titulo',
         position: 'bottom' as const,
       },
@@ -37,25 +46,36 @@ import {
     
   };
   
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June'];
+  const sample = [{
+    "data": "Ventas",
+    "cantidad": 100
+},
+{
+    "data": "Costo",
+    "cantidad": 70
+}]
   
-  export const data = {
-    labels,
-    datasets: [
-      {
-        //label: 'Dataset 1',
-        data: labels.map(() => Math.floor(Math.random() * (100 - 0 + 1)) + 0),
-        //backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      // {
-      //   label: 'Dataset 2',
-      //   data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      // },
-    ],
-  };
-  
-  export function BarChart() {
+  export function BarChart({dataChart = sample}:Props) {
+
+    if (!dataChart || dataChart.length === 0) {
+      return <div>No hay datos para mostrar</div>;
+    }
+
+    const labels = dataChart.map((item) => Object.values(item)[0]) || [];
+
+    const data = {
+    
+      labels,
+      datasets: [
+        {
+          //label: 'Dataset 1',
+          //data: labels.map(() => Math.floor(Math.random() * (100 - 0 + 1)) + 0),
+          //backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          data: dataChart?.map((item) => Object.values(item)[1]) || [],
+        },
+      ],
+    };
+
     return <Bar options={options} data={data}  className='p-6'/>;
   }
   

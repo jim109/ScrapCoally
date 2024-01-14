@@ -21,7 +21,7 @@ export default function Home() {
       </div>
       <Banner />
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10   pt-16 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 pt-16 '>
         <ChartVacantesProfesional />
         <ChartProfesionalesEmpresas />
       </div>

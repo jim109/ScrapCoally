@@ -9,7 +9,7 @@ export const ChartProfesionalesEmpresas = async() => {
                               {cache: 'force-cache'})
                               .then(res => res.json())
 
-    const { currentRecords, professionals } = await fetch('https://webscraping-4lkq.onrender.com/scraping/get-all-jobs',
+    const { professionals } = await fetch('https://webscraping-4lkq.onrender.com/scraping/get-all-jobs',
                             { cache: 'force-cache'})
                             .then( res => res.json())
 
