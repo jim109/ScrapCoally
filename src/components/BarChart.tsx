@@ -70,7 +70,14 @@ import {
         {
           //label: 'Dataset 1',
           //data: labels.map(() => Math.floor(Math.random() * (100 - 0 + 1)) + 0),
-          //backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          backgroundColor: [
+            'rgba(120, 113, 108, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(249, 115, 22, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+          ],
           data: dataChart?.map((item) => Object.values(item)[1]) || [],
         },
       ],

@@ -11,7 +11,7 @@ export const SalarioRolChart = async() => {
     return (
         <div className="w-full md:w-1/2 pt-12 pr-6 text-black">
             <div className='flex justify-between items-center pb-6'>
-                <h2 className='text-lg'>Role / Cantidad</h2>
+                <h2 className='text-lg'>Role / Vacantes</h2>
             </div>
             <div className='shadow-lg rounded-lg'>
             <BarChart dataChart= { data } />
