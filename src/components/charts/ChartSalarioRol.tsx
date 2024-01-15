@@ -2,10 +2,10 @@ import { BarChart } from './BarChart';
 
 
 
-export const SalarioRolChart = async() => {
+export const ChartSalarioRol = async() => {
 
     const { data } = await fetch('https://webscraping-4lkq.onrender.com/scraping/find-experience',
-    { cache: 'force-cache'})
+    { cache: 'no-store'})
     .then( res => res.json())
 
     return (

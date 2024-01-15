@@ -1,13 +1,11 @@
 import { Banner } from '@/components/Banner';
-import { ChartProfesionalesEmpresas } from '../../components/ChartProfesionalesEmpresas';
-import { ChartVacantesProfesional } from '../../components/ChartVacantesProfesional';
+import { ChartVacantesProfesional, ChartProfesionalesEmpresas } from '@/components/charts';
+
 
 export const metadata = {
   title: 'Dashboard Holberton - Coally',
   description: 'Dashboard',
  };
-
-const label = ['Vacantes', 'Profesionales']
 
 export default function Home() {
   return (

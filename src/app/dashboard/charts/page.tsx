@@ -1,7 +1,7 @@
-import { PieChart } from '@/components/PieChart';
-import { BarChart } from '../../../components/BarChart';
+import { PieChart } from '@/components/charts/PieChart';
+import { BarChart } from '../../../components/charts/BarChart';
 import { DropdownButton } from '../../../components/DropdownButton';
-import { SalarioRolChart } from '../../../components/SalarioRolChart'
+import { ChartSalarioRol } from '../../../components/charts/ChartSalarioRol'
 
 export const metadata = {
  title: 'Profesional Holberton - Coally',
@@ -21,7 +21,7 @@ export default function ChartsPage() {
       </div>
 
       <div className="flex flex-wrap text-black">
-        <SalarioRolChart  />
+        <ChartSalarioRol  />
         <div className="w-full md:w-1/2 pt-12 pl-6">
             <div className='flex justify-between items-center pb-6'>
                 <h2 className='text-lg'>Habilidades</h2>
