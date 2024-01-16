@@ -1,11 +1,11 @@
 'use client'
 
-interface DataItem {
-  [key: string]: string | number;
-}
+// interface DataItem {
+//   [key: string]: string | number;
+// }
 
 interface Props {
-  dataChart?: DataItem[];
+  
 }
 
 import {
@@ -55,12 +55,12 @@ import {
     "cantidad": 70
 }]
   
-  export function BarChart({dataChart = sample}:Props) {
+  export function BarChart({dataChart}) {
 
     if (!dataChart || dataChart.length === 0) {
       return <div>No hay datos para mostrar</div>;
     }
-
+    console.log(dataChart)
     const labels = dataChart.map((item) => Object.values(item)[0]) || [];
 
     const data = {

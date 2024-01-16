@@ -5,12 +5,12 @@ import { IoMail } from "react-icons/io5";
 
 export const Banner = async () => {
 
-    const { totalCompanies } = await fetch('https://webscraping-4lkq.onrender.com/scraping/find-by-company',
-                              {cache: 'no-store'})
+    const { totalCompanies } = await fetch('https://webscraping-4lkq.onrender.com/scraping/find-by-company',{
+      next: { revalidate: 7200 },})
                               .then(res => res.json())
 
-    const { currentDateTime, currentRecords, professionals } = await fetch('https://webscraping-4lkq.onrender.com/scraping/get-all-jobs',
-                            { cache: 'no-store'})
+    const { currentDateTime, currentRecords, professionals } = await fetch('https://webscraping-4lkq.onrender.com/scraping/get-all-jobs',{
+      next: { revalidate: 7200 },})
                             .then( res => res.json())
 
   return (

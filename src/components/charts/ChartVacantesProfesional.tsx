@@ -5,7 +5,7 @@ const label = ['Vacantes', 'Profesionales']
 export const ChartVacantesProfesional = async() => {
 
     const { currentRecords, professionals } = await fetch('https://webscraping-4lkq.onrender.com/scraping/get-all-jobs',
-                            { cache: 'no-store'})
+      { cache: 'no-store'})
                             .then( res => res.json())
 
   return (

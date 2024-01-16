@@ -25,9 +25,9 @@ export const Sidebar = () => {
                       h-screen bg-indigo-950 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[20%] 
                       xl:w-[20%] 2xl:w-[15%]">
         <div>
-        <div className="-mx-6 px-6 pt-20 pb-4">
+        <div className="pt-20 pb-4">
             <Link href="/dashboard" title="home">
-              <Image src="/Logo-Coally-Blanco.png" width={175} height={56} alt="Coally logo"/>
+              <Image src="/Logo-Coally-Blanco.png" width={175} height={67} alt="Coally logo" priority={true}/>
             </Link>
         </div>
         <ul className="space-y-2  mt-8"> 

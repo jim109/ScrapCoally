@@ -1,13 +1,15 @@
 import { PieChart } from '@/components/charts/PieChart';
 import { BarChart } from '../../../components/charts/BarChart';
-import { DropdownButton } from '../../../components/DropdownButton';
 import { ChartSalarioRol } from '../../../components/charts/ChartSalarioRol'
+import { GroupDropDown } from '@/components/GroupDropDown';
+import { GroupDropDownRoleCiudad } from '../../../components/GroupDropDownRoleCiudad';
+import { ChartHabilidades, ChartKeywords } from '@/components/charts';
 
 export const metadata = {
  title: 'Profesional Holberton - Coally',
  description: 'Profesional Holberton - Coally',
 };
-
+ 
 const label = ['Vacantes', 'Profesionales']
 
 export default function ChartsPage() {
@@ -20,39 +22,14 @@ export default function ChartsPage() {
         <h1 className="text-xl font-bold text-indigo-950 mr-6">Profesional Holberton - Coally</h1>
       </div>
 
-      <div className="flex flex-wrap text-black">
+      <div className="grid grid-cols-1 md:grid-cols-2 text-black gap-x-10">
         <ChartSalarioRol  />
-        <div className="w-full md:w-1/2 pt-12 pl-6">
-            <div className='flex justify-between items-center pb-6'>
-                <h2 className='text-lg'>Habilidades</h2>
-                <div className='flex gap-2 '>
-                    <DropdownButton name={'Experiencia'} /> 
-                    <DropdownButton name={'Role'}/>
-                </div>
-            </div>
-          <div className='shadow-lg rounded-lg'>
-            <BarChart />
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 pt-16 pr-6">
-            <div className='flex justify-between items-center pb-6'>
-                <h2 className='text-lg'>Keywords</h2>
-                <div className='flex gap-2 '>
-                    <DropdownButton name={'Experiencia'} /> 
-                    <DropdownButton name={'Role'}/>
-                </div>
-            </div>
-          <div className='shadow-lg rounded-lg'>
-            <BarChart />
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 pt-16 pl-6">
+        <ChartHabilidades />
+        <ChartKeywords />
+        <div className="pt-16">
             <div className='flex justify-between items-center pb-6'>
                 <h2 className='text-lg'>Ubicacion</h2>
-                <div className='flex gap-2 '>
-                    <DropdownButton name={'Role'} /> 
-                    <DropdownButton name={'Ciudad'}/>
-                </div>
+                <GroupDropDownRoleCiudad />
             </div>
           <div className='shadow-lg rounded-lg'>
             <PieChart label={label} />

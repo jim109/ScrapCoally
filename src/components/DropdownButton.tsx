@@ -1,18 +1,20 @@
 'use client'
 import { useState } from "react";
 
+
 interface Props {
   name: string
+  options: string[]
 }
 
-export const DropdownButton = ({name}:Props) => {
+export const DropdownButton = ({name, options}:Props) => {
   const [isOpen, setIsOpen] = useState(false);
+
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-  }; 
-
-  const options = ['Option 1', 'Option 2', 'Option 3'];
+  };
+  
 
   return (
     <div className="relative inline-block">

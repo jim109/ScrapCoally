@@ -1,15 +1,13 @@
 import { BarChart } from './BarChart';
 
-
-
 export const ChartSalarioRol = async() => {
 
-    const { data } = await fetch('https://webscraping-4lkq.onrender.com/scraping/find-experience',
-    { cache: 'no-store'})
+    const { data } = await fetch('https://webscraping-4lkq.onrender.com/scraping/find-experience',{
+        next: { revalidate: 10 },})
     .then( res => res.json())
 
     return (
-        <div className="w-full md:w-1/2 pt-12 pr-6 text-black">
+        <div className="pt-12 text-black">
             <div className='flex justify-between items-center pb-6'>
                 <h2 className='text-lg'>Role / Vacantes</h2>
             </div>
