@@ -1,6 +1,14 @@
 import { BarChart } from "."
 import { GroupDropDown } from "../GroupDropDown"
 
+interface SkillFrequency {
+  [key: string]: number;
+}
+interface Job {
+  keyword?: string[];
+  // Otras propiedades del trabajo...
+}
+
 export const ChartKeywords = async() => {
 
   const { data } = await fetch('https://webscraping-4lkq.onrender.com/scraping/get-all-jobs',
@@ -8,10 +16,10 @@ export const ChartKeywords = async() => {
   .then( res => res.json())
 
 // Objeto para almacenar la frecuencia de cada habilidad
-const skillFrequency = {};
+const skillFrequency: SkillFrequency = {};
 
 // Recorre cada trabajo y cuenta la frecuencia de habilidades
-data.forEach(job => {
+data.forEach((job: Job) => {
   const skills = job.keyword || [];
   skills.forEach(keyword => {
     // Convierte la habilidad a minúsculas para evitar diferencias de mayúsculas y minúsculas
@@ -30,10 +38,10 @@ data.forEach(job => {
 const skillFrequencyArray = Object.keys(skillFrequency)
   .map(keyword => ({
     keyword,
-    frequency: skillFrequency[keyword],
+    cantidad: skillFrequency[keyword],
   }))
   // Ordena el array en función de la frecuencia de habilidades de mayor a menor
-  .sort((a, b) => b.frequency - a.frequency)
+  .sort((a, b) => b.cantidad - a.cantidad)
   // Toma los primeros 20 elementos
   .slice(0, 20);
 
