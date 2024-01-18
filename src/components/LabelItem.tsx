@@ -2,7 +2,7 @@
 
 interface Props {
     icon: React.ReactNode;
-    data: string;
+    data: string| number;
     title: string;
   }
 

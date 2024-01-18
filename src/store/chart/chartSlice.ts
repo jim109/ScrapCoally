@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface chartState {
+    data: string[],
     role: string[],
     experience: string[],
     ciudad: string[],
@@ -8,11 +9,13 @@ interface chartState {
 }
 
 const initialState: chartState = {
-    role: ['Junior', 'Semisenior', 'Senior'],
+    data: [],
+    role: [],
     experience: ['1 año', '2 año', '3 año'],
     ciudad: ['Bucaramanga', 'Cali', 'Bogota'],
     isReady: false,
 }
+
 
 const chartSlice = createSlice({
   name: 'chart',
@@ -21,11 +24,12 @@ const chartSlice = createSlice({
     initChartState(state, action: PayloadAction<string[]>) {
       if (state.isReady) return;
 
-      state.role = action.payload
+      state.data = action.payload
       state.isReady = true
     }
   }
 });
+
 
 export const { initChartState } = chartSlice.actions
 

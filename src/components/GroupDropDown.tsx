@@ -1,25 +1,17 @@
 'use client'
 import { DropdownButton } from "./DropdownButton"
-import { useAppSelector, useAppDispatch } from '../store/index';
-import { useEffect } from "react";
-import { initChartState } from "@/store/chart/chartSlice";
+import { useAppSelector } from '../store/index';
+
 
 interface Props {
-  options: string[]
+  options?: string[]
 }
 
 export const GroupDropDown = ({ options = [] }: Props) => {
 
     const experience = useAppSelector(state => state.chart.experience)
     const role = useAppSelector(state => state.chart.role)
-    const dispatch = useAppDispatch()
 
-    useEffect(() => {
-      
-      dispatch( initChartState(options) )
-  
-    }, [dispatch, options])
-    
 
   return (
     <div className='flex gap-2 '>
