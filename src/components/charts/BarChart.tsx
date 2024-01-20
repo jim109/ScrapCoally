@@ -1,13 +1,10 @@
 'use client'
-
 interface DataItem {
   [key: string]: string | number;
 }
-
 interface Props {
-  dataChart?: DataItem[];
+  dataChart?: DataItem[] ;
 }
-
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -17,8 +14,8 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
+
   import { Bar } from 'react-chartjs-2';
-  
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -46,7 +43,7 @@ import {
     
   };
   
-  const sample = [{
+  const sample = [{ 
     "data": "Ventas",
     "cantidad": 100
 },

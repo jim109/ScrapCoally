@@ -2,11 +2,8 @@ import { PieChart } from "./"
 
 const label = ['Vacantes', 'Profesionales']
 
-export const ChartVacantesProfesional = async() => {
+export const ChartVacantesProfesional = ({currentRecords, professionals}) => {
 
-    const { currentRecords, professionals } = await fetch('https://webscraping-4lkq.onrender.com/scraping/get-all-jobs',
-      { cache: 'no-store'})
-                            .then( res => res.json())
 
   return (
     <div className='shadow-lg rounded-md'>

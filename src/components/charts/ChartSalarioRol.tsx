@@ -1,10 +1,10 @@
+'use client'
 import { BarChart } from './BarChart';
+import { useGetExperienceJobsQuery } from '@/api/scrapingApi';
 
-export const ChartSalarioRol = async() => {
+export const ChartSalarioRol = () => {
 
-    const { data } = await fetch('https://webscraping-4lkq.onrender.com/scraping/find-experience',{
-        next: { revalidate: 10 },})
-    .then( res => res.json())
+    const {  data = [] } = useGetExperienceJobsQuery(null);
 
     return (
         <div className="pt-12 text-black">
@@ -12,8 +12,8 @@ export const ChartSalarioRol = async() => {
                 <h2 className='text-lg'>Role / Vacantes</h2>
             </div>
             <div className='shadow-lg rounded-lg'>
-            <BarChart dataChart= { data } />
-            </div>
+            <BarChart dataChart= { data.data } /> 
+            </div> 
          </div>
 
     )

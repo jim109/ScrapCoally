@@ -1,43 +1,38 @@
 'use client'
 import { useState } from "react";
 
-
 interface Props {
   name: string
   options: string[]
 }
 
+
 export const DropdownButton = ({name, options}:Props) => {
-  const [isOpen, setIsOpen] = useState(false);
 
+  const [selectedValue, setSelectedValue] = useState<string>('');
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOption = e.target.value;
+    setSelectedValue(selectedOption);
+    console.log(`Selected ${name}: ${selectedOption}`);
   };
-  
 
   return (
     <div className="relative inline-block">
-      <button
-        type="button"
-        className="inline-flex justify-center w-24 px-2 text-xs font-normal text-indigo-950 border-2 border-indigo-950 rounded-sm hover:text-white hover:bg-indigo-950 focus:outline-none focus:ring focus:ring-indigo-500"
-        onClick={toggleDropdown}
+      <select className="inline-flex justify-center w-24 px-2 text-xs font-normal text-indigo-950 border-2 border-indigo-950 rounded-sm hover:text-white hover:bg-indigo-950 focus:outline-none focus:ring focus:ring-indigo-500"
+              onChange={ handleChange }
+              value={ selectedValue }
       >
-        { name }
-      </button>
-
-      {isOpen && (
-        <div className="absolute right-0 mt-2 space-y-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg">
-          {options.map((option, index) => (
-            <div key={index} className="px-4 py-2">
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
+        <option value="">{ name }</option>
+        {options.map((option, index) => (
+          <option key={index}>{option}</option>
+        ))}
+      </select>
     </div>
   );
 };
+
+
 
 
 

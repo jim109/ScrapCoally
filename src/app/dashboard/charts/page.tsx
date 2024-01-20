@@ -1,7 +1,5 @@
 import { PieChart } from '@/components/charts/PieChart';
-import { BarChart } from '../../../components/charts/BarChart';
 import { ChartSalarioRol } from '../../../components/charts/ChartSalarioRol'
-import { GroupDropDown } from '@/components/GroupDropDown';
 import { GroupDropDownRoleCiudad } from '../../../components/GroupDropDownRoleCiudad';
 import { ChartHabilidades, ChartKeywords } from '@/components/charts';
 

@@ -1,6 +1,4 @@
 import { Banner } from '@/components/Banner';
-import { ChartVacantesProfesional, ChartProfesionalesEmpresas } from '@/components/charts';
-
 
 export const metadata = {
   title: 'Dashboard Holberton - Coally',
@@ -18,12 +16,6 @@ export default function Home() {
         <button className="px-10 bg-indigo-950 rounded-md">Actualizar informacion</button>
       </div>
       <Banner />
-
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-10 pt-16 '>
-        <ChartVacantesProfesional />
-        <ChartProfesionalesEmpresas />
-      </div>
-
     </div>
   )
 }
