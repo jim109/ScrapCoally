@@ -4,8 +4,8 @@ import { Pie } from 'react-chartjs-2';
 
 interface Props {
   label: string[],
-  data1?: number,
-  data2?: number
+  data1?: number | string,
+  data2?: number | string,
 }
 
 export function PieChart({label, data1 = 10, data2 = 10}:Props) {

@@ -1,8 +1,13 @@
 import { PieChart } from "."
+import { AllJobsResponse } from '../../api/scrapingApi';
 
+interface ProfesionalVancante {
+  professionals: number | string,
+  totalCompanies: number | string,
+ }
 const label = ['Profesionales', 'Empresas']
 
-export const ChartProfesionalesEmpresas = ({professionals, totalCompanies}) => {
+export const ChartProfesionalesEmpresas = ({professionals, totalCompanies}:ProfesionalVancante) => {
 
   return (
     <div className='shadow-lg rounded-md'>

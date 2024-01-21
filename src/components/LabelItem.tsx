@@ -17,3 +17,4 @@ export const LabelItem = ({icon, data, title}:Props) => {
     </div>
   )
 }
+ 

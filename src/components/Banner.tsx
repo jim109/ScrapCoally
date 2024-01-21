@@ -26,11 +26,11 @@ export const Banner = () => {
         <LabelItem icon={<FaCalendar />} data={ alljobs.currentDateTime } title={'Ultima Actualizacion'} />
         <LabelItem icon={<FaShoppingBag />} data={ alljobs.currentRecords } title={'Registros Actuales'} />
         <LabelItem icon={<BsFillPersonFill />} data={ alljobs.professionals } title={'Profesionales'} />
-        <LabelItem icon={<IoMail />} data={ 11 } title={'Empresas'} />
+        <LabelItem icon={<IoMail />} data={ 167 } title={'Empresas'} />
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10 pt-16 '>
           <ChartVacantesProfesional professionals={alljobs.professionals} currentRecords={alljobs.currentRecords}/>
-          <ChartProfesionalesEmpresas totalCompanies={11} professionals={alljobs.professionals} />
+          <ChartProfesionalesEmpresas totalCompanies={167} professionals={alljobs.professionals} />
       </div>
     </>
   )
