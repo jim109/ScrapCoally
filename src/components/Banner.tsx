@@ -22,7 +22,7 @@ export const Banner = () => {
   
   return (
     <>  
-      <div className="flex gap-4 pt-8 justify-between">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 justify-between">
         <LabelItem icon={<FaCalendar />} data={ alljobs.currentDateTime } title={'Ultima Actualizacion'} />
         <LabelItem icon={<FaShoppingBag />} data={ alljobs.currentRecords } title={'Registros Actuales'} />
         <LabelItem icon={<BsFillPersonFill />} data={ alljobs.professionals } title={'Profesionales'} />

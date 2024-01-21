@@ -1,9 +1,11 @@
+'use client'
 import Link from "next/link";
 import { SidebarItem } from "./SidebarItem"
 import { CiLogout } from 'react-icons/ci';
 import { BsHouse, BsGraphUpArrow } from 'react-icons/bs'
 
 import Image from "next/image";
+import { useAppSelector } from '../store/index';
 
 const menuItem = [
   {
@@ -20,10 +22,13 @@ const menuItem = [
 ]
 
 export const Sidebar = () => {
+  
+  const menuMobile = useAppSelector((state) => state.chart.menuMobile)
+  
   return (
-    <aside className="ml-[-100%] fixed z-10 top-0 pb-10 pl-8 w-full flex flex-col justify-between 
-                      h-screen bg-indigo-950 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[20%] 
-                      xl:w-[20%] 2xl:w-[15%]">
+    <aside className={`${ menuMobile? 'ml-[0%]' : 'ml-[-100%]' } fixed z-10 top-0 pb-10 pl-8 w-full flex flex-col justify-between 
+                      h-screen bg-indigo-950 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] 
+                      xl:w-[20%] 2xl:w-[15%]`}>
         <div>
         <div className="pt-20 pb-4">
             <Link href="/dashboard" title="home">
