@@ -1,14 +1,14 @@
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react';
 
-export type AllJobs = {
+export interface AllJobsResponse  {
   success:         boolean;
   currentDateTime: string;
   currentRecords:  number;
   professionals:   number;
-  data:            Datum[];
+  data:            Data[];
 }
 
-export type Datum = {
+export interface Data {
   requirement: Requirement;
   _id:         string;
   title:       null | string;
@@ -19,7 +19,7 @@ export type Datum = {
   __v:         number;
 }
 
-export type Requirement = {
+export interface Requirement {
   education?:  string | null;
   experience?: string | null;
   languages?:  string | null;
@@ -51,7 +51,7 @@ export const scrapingApi = createApi({
       getExperienceJobs: builder.query<Experience, null>({
         query: () => "find-experience",
       }),
-      getAllJobs: builder.query<AllJobs, null>({
+      getAllJobs: builder.query<AllJobsResponse, null>({
         query: () => `get-all-jobs`,
       }),
       getByLocation: builder.query<Location, null>({

@@ -1,25 +1,10 @@
 'use client'
 import { BarChart } from "."
 import { GroupDropDown } from "../GroupDropDown"
-import { useGetAllJobsQuery } from "@/api/scrapingApi";
+import { AllJobsResponse, Data, useGetAllJobsQuery } from "@/api/scrapingApi";
 
 interface SkillFrequency {
   [key: string]: number;
-}
-interface Job {
-  requirement: {
-      education: string;
-      experience: string;
-      languages: string;
-      skills: string[];
-  };
-  _id: string;
-  title: string;
-  company: string;
-  location: string;
-  salary: string;
-  keyword: string[];
-  __v: number;
 }
 
 export const ChartHabilidades = () => {
@@ -38,12 +23,12 @@ export const ChartHabilidades = () => {
       </div>
     </div>
   }
-  const jobsData = data?.data || []
+  const jobsData = (data as AllJobsResponse).data || []
   // Objeto para almacenar la frecuencia de cada habilidad
   const skillFrequency: SkillFrequency = {};
 
   // Recorre cada trabajo y cuenta la frecuencia de habilidades
-  jobsData.forEach((job: Job) => {
+  jobsData.forEach((job: Data) => {
       const skills = job.requirement.skills || [];
       skills.forEach(skill => {
       // Convierte la habilidad a minúsculas para evitar diferencias de mayúsculas y minúsculas
