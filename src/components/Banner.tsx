@@ -4,7 +4,7 @@ import { BsFillPersonFill } from 'react-icons/bs'
 import { FaCalendar, FaShoppingBag } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { ChartProfesionalesEmpresas, ChartVacantesProfesional } from './charts';
-import { useGetAllJobsQuery, AllJobs } from '@/api/scrapingApi';
+import { useGetAllJobsQuery, AllJobsResponse } from '@/api/scrapingApi';
 
 export const Banner = () => {
   
@@ -18,7 +18,7 @@ export const Banner = () => {
     )
   }
 
-  const alljobs = dataJobs as AllJobs 
+  const alljobs = dataJobs as AllJobsResponse 
   
   return (
     <>  
