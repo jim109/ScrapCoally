@@ -26,17 +26,17 @@ export interface Requirement {
   skills:      string[] | null;
 }
 
-interface Experience {
+export interface Experience {
   success: boolean;
   data: RoleItem[];
 }
 
-interface RoleItem {
+export interface RoleItem {
   role: string;
   cantidad: number;
 }
 
-interface Location {
+export interface Location {
   city: string;
   amount: number
 }
